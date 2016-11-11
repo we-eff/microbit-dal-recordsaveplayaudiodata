@@ -15,43 +15,43 @@ set(YOTTA_AUTO_MICROBIT-DAL_CPP_FILES
     "core/MicroBitListener.cpp"
     "core/MicroBitSystemTimer.cpp"
 
-    "types/ManagedString.cpp"
-    "types/Matrix4.cpp"
-    "types/MicroBitEvent.cpp"
-    "types/MicroBitImage.cpp"
-    "types/PacketBuffer.cpp"
-    "types/RefCounted.cpp"
+#    "types/ManagedString.cpp"
+#    "types/Matrix4.cpp"
+#    "types/MicroBitEvent.cpp"
+#    "types/MicroBitImage.cpp"
+#    "types/PacketBuffer.cpp"
+#    "types/RefCounted.cpp"
 
     "drivers/DynamicPwm.cpp"
-    "drivers/MicroBitAccelerometer.cpp"
-    "drivers/MicroBitButton.cpp"
-    "drivers/MicroBitCompass.cpp"
-    "drivers/MicroBitCompassCalibrator.cpp"
-    "drivers/MicroBitDisplay.cpp"
-    "drivers/MicroBitI2C.cpp"
-    "drivers/MicroBitIO.cpp"
-    "drivers/MicroBitLightSensor.cpp"
-    "drivers/MicroBitMessageBus.cpp"
-    "drivers/MicroBitMultiButton.cpp"
-    "drivers/MicroBitPin.cpp"
-    "drivers/MicroBitRadio.cpp"
-    "drivers/MicroBitRadioDatagram.cpp"
-    "drivers/MicroBitRadioEvent.cpp"
-    "drivers/MicroBitSerial.cpp"
-    "drivers/MicroBitStorage.cpp"
-    "drivers/MicroBitThermometer.cpp"
-    "drivers/TimedInterruptIn.cpp"
+#    "drivers/MicroBitAccelerometer.cpp"
+#    "drivers/MicroBitButton.cpp"
+#    "drivers/MicroBitCompass.cpp"
+#    "drivers/MicroBitCompassCalibrator.cpp"
+#    "drivers/MicroBitDisplay.cpp"
+#    "drivers/MicroBitI2C.cpp"
+#    "drivers/MicroBitIO.cpp"
+#    "drivers/MicroBitLightSensor.cpp"
+#    "drivers/MicroBitMessageBus.cpp"
+#    "drivers/MicroBitMultiButton.cpp"
+#    "drivers/MicroBitPin.cpp"
+#    "drivers/MicroBitRadio.cpp"
+#    "drivers/MicroBitRadioDatagram.cpp"
+#    "drivers/MicroBitRadioEvent.cpp"
+#    "drivers/MicroBitSerial.cpp"
+#    "drivers/MicroBitStorage.cpp"
+#    "drivers/MicroBitThermometer.cpp"
+#    "drivers/TimedInterruptIn.cpp"
 
-    "bluetooth/MicroBitAccelerometerService.cpp"
-    "bluetooth/MicroBitBLEManager.cpp"
-    "bluetooth/MicroBitButtonService.cpp"
-    "bluetooth/MicroBitDFUService.cpp"
-    "bluetooth/MicroBitEventService.cpp"
-    "bluetooth/MicroBitIOPinService.cpp"
-    "bluetooth/MicroBitLEDService.cpp"
-    "bluetooth/MicroBitMagnetometerService.cpp"
-    "bluetooth/MicroBitTemperatureService.cpp"
-    "bluetooth/MicroBitUARTService.cpp"
+#    "bluetooth/MicroBitAccelerometerService.cpp"
+#    "bluetooth/MicroBitBLEManager.cpp"
+#    "bluetooth/MicroBitButtonService.cpp"
+#    "bluetooth/MicroBitDFUService.cpp"
+#    "bluetooth/MicroBitEventService.cpp"
+#    "bluetooth/MicroBitIOPinService.cpp"
+#    "bluetooth/MicroBitLEDService.cpp"
+#    "bluetooth/MicroBitMagnetometerService.cpp"
+#    "bluetooth/MicroBitTemperatureService.cpp"
+#    "bluetooth/MicroBitUARTService.cpp"
 )
 
 execute_process(WORKING_DIRECTORY "../../yotta_modules/${PROJECT_NAME}" COMMAND "git" "log" "--pretty=format:%h" "-n" "1" OUTPUT_VARIABLE git_hash)
@@ -92,14 +92,14 @@ yotta_postprocess_target(LIBRARY microbit-dal)
 
 target_link_libraries(microbit-dal
     mbed-classic
-    ble
-    ble-nrf51822
+#    ble
+#    ble-nrf51822
 )
 
 if(CMAKE_COMPILER_IS_GNUCC)
     message("suppressing ALL warnings from mbed-classic, ble, ble-nrf51822 & nrf51-sdk")
     target_compile_options(mbed-classic PRIVATE "-w")
-    target_compile_options(ble PRIVATE "-w")
-    target_compile_options(ble-nrf51822 PRIVATE "-w")
-    target_compile_options(nrf51-sdk PRIVATE "-w")
+#    target_compile_options(ble PRIVATE "-w")
+#    target_compile_options(ble-nrf51822 PRIVATE "-w")
+#    target_compile_options(nrf51-sdk PRIVATE "-w")
 endif()
